@@ -5,8 +5,9 @@ import { pokemonsContext } from "@/providers/PokemonsProvider";
 import { useContext, useEffect } from "react";
 import Image from "next/image";
 
-export default function test() {
+export default async function test({ params }) {
   const router = useRouter();
+  const slug = (await params).id;
   console.log(router.query.id);
 
   const { id } = router.query;
